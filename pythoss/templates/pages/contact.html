@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}Contact{% if info.site_title %} | {{ info.site_title }}{% endif %}{% endblock title %}
+{% block stylesheet %}
+	<link rel="stylesheet" type="text/css" href="{% static 'pss/css/home.css' %}">
+{% endblock stylesheet %}
+{% block content %}
+<div class="contact-page-wrap" style="background-color: #EEEEEE;">
+	<header class="contact-page-header">
+		{% include 'pages/subpart/header.html' %}
+	</header>
+	<main class="contact-page-main">
+		<div class="contact-wrap">
+			{% include 'pages/subpart/contact.html' %}
+		</div>
+	</main>
+	<footer class="contact-page-footer py-5 text-center text-uppercase text-light bg-dark">
+		{% include 'pages/subpart/footer.html' %}
+	</footer>
+</div>
+{% endblock content %}

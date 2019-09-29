@@ -1,0 +1,21 @@
+{% load staticfiles %}
+<div class="{{ name }}-wrap pb-5 mt-5 {% if bglight %}bg-light{% endif %}">
+	<div class="question text-center">
+		<h3 class="question-title text-uppercase text-center text-dark display-4 pb-3">{{ lq }}</h3>
+	</div>
+	<div class="container">
+		<div class="{{ name }} py-3 my-5 text-light" style="background: url({% static lbi %}) no-repeat;background-size: 100% 100%;min-height: 400px;">
+			<div class="row">
+				<div class="col-12 col-md-6 float-left my-auto">
+					<div class="{{ name }}-header mt-5 py-3 px-3">
+						<h2 class="title text-uppercase">{{ lt }}</h2>
+					</div>
+					<div class="{{ name }}-content py-3 px-3">
+						<p class="description">{{ ld|linebreaks }}</p>
+						<p class="final-description">{{ lft }}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

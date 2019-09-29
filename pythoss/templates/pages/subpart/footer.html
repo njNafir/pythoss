@@ -1,0 +1,19 @@
+{% load staticfiles %}
+<div class="container">
+	<div class="row">
+		<div class="col-12">
+			{% if so_li %}
+			<div class="social-area">
+				<ul>
+					{% for li in so_li %}
+					<a href="{{ li.link }}" target="_blank" class="bg-light"><li><img src="{% static li.icon.url %}"></li></a>
+					{% endfor %}
+				</ul>
+			</div>
+			{% endif %}
+			<div class="copyright-sign">
+				<span>&copy;2019 Py Soft Sol;</span>
+			</div>
+		</div>
+	</div>
+</div>

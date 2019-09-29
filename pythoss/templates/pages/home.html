@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}Home{% if info.site_title %} | {{ info.site_title }}{% endif %}{% endblock title %}
+{% block stylesheet %}
+	<link rel="stylesheet" type="text/css" href="{% static 'pss/css/home.css' %}">
+{% endblock stylesheet %}
+{% block content %}
+<div class="home-page-wrap">
+	<header class="home-page-header">
+		{% include 'pages/subpart/header.html' %}
+	</header>
+	<main class="home-page-main">
+		<div class="working-with py-5">
+			{% include 'pages/subpart/environment.html' %}
+		</div>
+		<div class="what-we-do">
+			{% include 'pages/subpart/service.html' %}
+		</div>
+	</main>
+	<footer class="home-page-footer py-5 text-center text-uppercase text-light bg-dark">
+		{% include 'pages/subpart/footer.html' %}
+	</footer>
+</div>
+{% endblock content %}

@@ -1,0 +1,32 @@
+<div class="container">
+	<div class="contact">
+		<div class="row text-center">
+			<div class="col-12 col-md-10 col-lg-8 mx-auto">
+				{% if not home_page %}
+				<div class="hire-contact-form">
+					<h1 class="contact-quote display-3 pt-5 mt-5 text-uppercase">Have a project?</h1>
+					<hr class="py-4">
+					<div class="form-wrap">
+						<form class="form" method="POST" action="">
+							{{ hire_form.as_p }}
+							{% csrf_token %}
+							<input type="submit" name="Submit" class="btn px-5 py-3 text-uppercase submit-hire-contact-form submit" value="Submit Now">
+						</form>
+					</div>
+				</div>	
+				{% endif %}
+				<div class="normal-contact pt-5 mt-5">
+					<h1 class="contact-quote display-3 pt-5 text-uppercase">Have a question?</h1>
+					<hr class="py-4">
+					<div class="form-wrap">
+						<form class="form" method="POST" action="">
+							{{ form.as_p }}
+							{% csrf_token %}
+							<input type="submit" name="Submit" class="btn px-5 py-3 text-uppercase submit-normal-contact-form submit" value="Ask now">
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

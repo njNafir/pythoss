@@ -1,0 +1,61 @@
+<div class="bg py-5 my-5">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="service-wrap">
+					<div class="service">
+						{% if service.exists %}
+						<div class="row">
+							{% for serv in service %}
+							{% if home_page %}
+							<div class="col-12 col-md-6">
+								<div class="single-service">
+									<div class="single-service-title">
+										<h2 class="title text-uppercase text-secondary pb-4">{{ serv.title }}</h2>
+									</div>
+									<div class="single-service-content">
+										<h4 class="text-uppercase text-dark py-4">{{ serv.subtitle }}</h4>
+										<p class="text-dark text-justify">{{ serv.description|truncatewords:50 }}</p>
+									</div>
+								</div>
+							</div>
+							{% else %}
+							<div class="col-12 col-md-8 mx-auto">
+								<div class="single-service">
+									<div class="single-service-title">
+										<h1 class="title text-uppercase text-secondary pt-5 pb-4 text-center">{{ serv.title }}</h1>
+									</div>
+									<div class="single-service-content py-4">
+										<h4 class="text-uppercase text-dark py-4 text-center">{{ serv.subtitle }}</h4>
+										<p class="text-dark text-justify">{{ serv.description|linebreaks }}</p>
+									</div>
+									{% if serv.provided_skill.exists %}
+									<div class="single-service-skillset py-4">
+										<h3 class="text-uppercase text-info pb-4">Providing:</h3>
+										<ul class="provided_skill">
+											{% for skill in serv.provided_skill.all %}
+											<li class="list-item">{{ skill.title }} ( {{ skill.subtitle }} )</li>
+											{% endfor %}
+										</ul>
+									</div>
+									<hr class="bg-info mb-5">
+									{% endif %}
+								</div>
+							</div>
+							{% endif %}
+							{% endfor %}
+						</div>
+						{% endif %}
+						<div class="final text-center text-uppercase text-info pb-5">
+							<h2 class="h2 title my-5">We can provide high quality web design & development.</h2>
+							{% if home_page %}
+							<a href="{% url 'service_page' %}" class="btn btn-outline-info px-5 py-3 mx-2">More about services</a>
+							{% endif %}
+							<a href="{% url 'contact_page' %}" class="btn btn-outline-success px-5 py-3 mx-2">Contact with us</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

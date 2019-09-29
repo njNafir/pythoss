@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}Work{% if info.title %} | {{ info.title }}{% endif %}{% endblock title %}
+{% block stylesheet %}
+	<link rel="stylesheet" type="text/css" href="{% static 'pss/css/home.css' %}">
+{% endblock stylesheet %}
+{% block content %}
+<div class="home-page-wrap">
+	<header class="home-page-header">
+			{% include 'pages/subpart/header.html' %}
+	</header>
+	<main class="home-page-main">
+		<div class="row text-center">
+			<div class="col-12">
+				<div class="work-wrap d-block">
+					{% if single %}
+					{% include 'pages/subpart/work.html' with info=info st=st gal_im=gal_im single=single %}
+					{% else %}
+					{% include 'pages/subpart/work.html' with info=info sts=sts %}
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer class="home-page-footer py-5 text-center text-uppercase text-light bg-dark">
+		{% include 'pages/subpart/footer.html' %}
+	</footer>
+</div>
+{% endblock content %}

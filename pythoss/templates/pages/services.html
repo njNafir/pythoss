@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}Service{% if info.site_title %} | {{ info.site_title }}{% endif %}{% endblock title %}
+{% block stylesheet %}
+	<link rel="stylesheet" type="text/css" href="{% static 'pss/css/home.css' %}">
+{% endblock stylesheet %}
+{% block content %}
+<div class="service-page-wrap bg-light">
+	<header class="service-page-header">
+		{% include 'pages/subpart/header.html' %}
+	</header>
+	<main class="service-page-main">
+		<div class="what-we-do">
+			{% include 'pages/subpart/service.html' %}
+		</div>
+	</main>
+	<footer class="service-page-footer py-5 text-center text-uppercase text-light bg-dark">
+		{% include 'pages/subpart/footer.html' %}
+	</footer>
+</div>
+{% endblock content %}

@@ -1,0 +1,12 @@
+{% load staticfiles %}
+<div class="bg-white">
+	<div class="row">
+		<div class="col-12">
+			<div class="environ-wrap">
+				{% include 'pages/subpart/snippets/environ.html' with name='environ' lq=info.language_question lbi=info.language_background_image.url lt=info.language_title ld=info.language_description lft=info.language_final_text %}
+				
+				{% include 'pages/subpart/snippets/environ.html' with name='framework' bglight=True lq=info.framework_question lbi=info.framework_background_image.url lt=info.framework_title ld=info.framework_description lft=info.framework_final_text %}
+			</div>
+		</div>
+	</div>
+</div>
